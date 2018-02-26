@@ -107,7 +107,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	{
 		Turret->Rotate(DeltaRotator.Yaw);
 	}
-	else
+	else // Avoid going the long way
 	{
 		Turret->Rotate(-DeltaRotator.Yaw);
 	}
@@ -115,7 +115,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 
 void UTankAimingComponent::Fire()
 {
-	if (FiringState == EFiringState::Locked && FiringState == EFiringState::Aiming)
+	if (FiringState == EFiringState::Locked || FiringState == EFiringState::Aiming)
 	{
 		// Spawn a projectile at the socket location on the barrel
 		if (!ensure(Barrel)) { return; }
