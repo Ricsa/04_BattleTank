@@ -74,6 +74,3 @@ BattleTank/Intermediate/*
 # Cache files for the editor to use
 BattleTank/DerivedDataCache/*
 
-# Starter Content
-BattleTank/Content/StarterContent
-
